@@ -1,0 +1,25 @@
+{
+  "name": "video-kit-h",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A hand-drawn talking-head / explainer video production line: one episode.json drives narration script, storyboard, 16:9 + 9:16 films, acceptance checks and a permanent archive record.",
+  "license": "MIT",
+  "keywords": ["animation", "hand-drawn", "explainer", "voiceover", "canvas", "ffmpeg", "archive", "design-spec"],
+  "scripts": {
+    "check": "node tools/selfcheck.mjs",
+    "episode:new": "node tools/new-episode.mjs",
+    "episode:build": "node tools/build-episode.mjs",
+    "episode:render": "node src/main.mjs",
+    "episode:verify": "node tools/verify.mjs",
+    "episode:delivery": "node tools/verify-delivery.mjs",
+    "episode:archive": "node tools/archive-episode.mjs",
+    "render": "node src/main.mjs --render",
+    "verify": "node tools/verify.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.80"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "episode": "2026-11-11-handdrawn-beat-video-kit",
+  "date": "2026-11-11",
+  "title": "怎么用 AI 出一份优质的应用动画视频",
+  "topic": "方法论口播 / 手绘动画讲解",
+  "tags": [
+    "手绘动画",
+    "卡点",
+    "提示词规格化",
+    "逐帧验收",
+    "工作流"
+  ],
+  "status": "delivered",
+  "archivedAt": "2026-11-11T10:40:42.874Z",
+  "duration": 240,
+  "fps": 24,
+  "bpm": 90,
+  "offset": 0.4,
+  "chapters": 7,
+  "shots": 10,
+  "narration": {
+    "mode": "post-record",
+    "voice": "用户后期补录",
+    "totalChars": 952,
+    "paceByChapter": [
+      223,
+      219,
+      277,
+      213,
+      227,
+      274,
+      205
+    ],
+    "files": [
+      "episodes/2026-11-11-handdrawn-beat-video-kit/narration-script.md",
+      "episodes/2026-11-11-handdrawn-beat-video-kit/narration-cues.json",
+      "episodes/2026-11-11-handdrawn-beat-video-kit/narration.srt"
+    ]
+  },
+  "layouts": [
+    {
+      "layout": "16x9",
+      "film": "episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-16x9.mp4",
+      "sizeBytes": 113939785,
+      "sha256": "0f7c2cc77c5e4c1d0789818306729b48b3f5e4ecbc2b170cd91bce78765ab264",
+      "ffprobe": {
+        "duration": 240,
+        "size": 113939785,
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frameRate": "24/1",
+        "frames": 5760,
+        "audioCodec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "contactSheet": "episodes/2026-11-11-handdrawn-beat-video-kit/out/contact-16x9.jpg",
+      "verification": {
+        "passed": 26,
+        "total": 26,
+        "report": "episodes/2026-11-11-handdrawn-beat-video-kit/out/verify-report-16x9.json"
+      },
+      "config": "episodes/2026-11-11-handdrawn-beat-video-kit/project.json",
+      "generatedDir": "episodes/2026-11-11-handdrawn-beat-video-kit/generated"
+    },
+    {
+      "layout": "9x16",
+      "film": "episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-9x16.mp4",
+      "sizeBytes": 101293169,
+      "sha256": "3893d4379f4ac8eb6acdeaccb3dead15fc25aa625228faeb8eb402108520ca3b",
+      "ffprobe": {
+        "duration": 240,
+        "size": 101293169,
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "frameRate": "24/1",
+        "frames": 5760,
+        "audioCodec": "aac",
+        "sampleRate": 44100,
+        "channels": 2
+      },
+      "contactSheet": "episodes/2026-11-11-handdrawn-beat-video-kit/out/contact-9x16.jpg",
+      "verification": {
+        "passed": 26,
+        "total": 26,
+        "report": "episodes/2026-11-11-handdrawn-beat-video-kit/out/verify-report-9x16.json"
+      },
+      "config": "episodes/2026-11-11-handdrawn-beat-video-kit/project-9x16.json",
+      "generatedDir": "episodes/2026-11-11-handdrawn-beat-video-kit/generated-9x16"
+    }
+  ],
+  "generatedFiles": [
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/spec.json",
+      "sha256": "2a7dde0a4692f0c67346bf2f5f2a94c30ea658ed6cd1fda2a6dd76976414234f"
+    },
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated-9x16/spec.json",
+      "sha256": "47f944c21b38cb7b8f6c1fe93e27ebb0c42b78171a4c45237a8cc55eadf07109"
+    },
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/subtitle-cards.json",
+      "sha256": "5f9802df51731f0ab4dfdf16dbf818f353ff8119363afb1981ba73a58c5da369"
+    },
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated-9x16/subtitle-cards.json",
+      "sha256": "17d96ae03b066d95e6fffd798abdbdacb0caf595cdf7dcd458c2dec91d9654be"
+    },
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/beat-grid.json",
+      "sha256": "d9b5cb4cb657564753136ab4792410ce605cbd501288074dce0fa2a1ef9610bb"
+    },
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated-9x16/beat-grid.json",
+      "sha256": "d9b5cb4cb657564753136ab4792410ce605cbd501288074dce0fa2a1ef9610bb"
+    },
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/prepare-report.json",
+      "sha256": "cdadc580b6554717bb1b1e276cda9d837977b177db86e4d2622c232006e4754b"
+    },
+    {
+      "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated-9x16/prepare-report.json",
+      "sha256": "cdadc580b6554717bb1b1e276cda9d837977b177db86e4d2622c232006e4754b"
+    }
+  ],
+  "commands": [
+    "node tools/build-episode.mjs --episode episodes/2026-11-11-handdrawn-beat-video-kit",
+    "node src/main.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project.json --render",
+    "node src/main.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project-9x16.json --render",
+    "node tools/verify.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project.json --file episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-16x9.mp4 --report episodes/2026-11-11-handdrawn-beat-video-kit/out/verify-report-16x9.json",
+    "node tools/verify.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project-9x16.json --file episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-9x16.mp4 --report episodes/2026-11-11-handdrawn-beat-video-kit/out/verify-report-9x16.json",
+    "node tools/verify-delivery.mjs --episode episodes/2026-11-11-handdrawn-beat-video-kit",
+    "node tools/archive-episode.mjs --episode episodes/2026-11-11-handdrawn-beat-video-kit"
+  ],
+  "notes": {
+    "source": "由 handdrawn-beat-video-kit 音乐卡点动画工程拆解而来，讲解片本身不含任何第三方音频",
+    "honesty": "只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录",
+    "next": "后续口播稿按同一标准新建 episode 目录，跑 new → build → render → verify → archive"
+  },
+  "gitCommit": null
+}

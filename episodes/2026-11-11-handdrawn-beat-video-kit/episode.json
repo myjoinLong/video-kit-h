@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "id": "2026-11-11-handdrawn-beat-video-kit",
+  "date": "2026-11-11",
+  "title": "怎么用 AI 出一份优质的应用动画视频",
+  "topic": "方法论口播 / 手绘动画讲解",
+  "tags": ["手绘动画", "卡点", "提示词规格化", "逐帧验收", "工作流"],
+  "status": "delivered",
+  "duration": 240,
+  "fps": 24,
+  "bpm": 90,
+  "offset": 0.400,
+  "softEndingAt": 238.400,
+  "keywords": ["规格", "卡点", "字幕", "验收"],
+  "narration": {
+    "mode": "post-record",
+    "voice": "用户后期补录",
+    "silentPlaceholder": true,
+    "paceWordsPerMinute": 220,
+    "note": "成片自带精确等长的静音 AAC 轨，按 chapters 的 in/out 对齐替换即可；画面内手绘文字已烧进画面，不需要再叠字幕。"
+  },
+  "style": {
+    "palette": "warm-handdrawn",
+    "boilHz": 12,
+    "softEnding": true,
+    "interactions": true,
+    "portraitInfographics": true,
+    "heroU": "auto"
+  },
+  "layouts": {
+    "16x9": {
+      "heroPlacement": { "x": 250, "y": 880, "u": 22 },
+      "cardBand": { "xMin": 400, "xMax": 1560, "y": 905, "jitterY": 26 },
+      "out": "episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-16x9.mp4",
+      "generatedDir": "episodes/2026-11-11-handdrawn-beat-video-kit/generated"
+    },
+    "9x16": {
+      "heroPlacement": { "x": 514, "y": 1010, "u": 22 },
+      "cardBand": { "xMin": 110, "xMax": 970, "y": 1730, "jitterY": 22, "rows": 3, "rowGap": 76 },
+      "out": "episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s.mp4",
+      "generatedDir": "episodes/2026-11-11-handdrawn-beat-video-kit/generated-9x16",
+      "kfScale": 0.72
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "in": 0.0,
+      "out": 18.0,
+      "title": "冷开场：先看结果",
+      "shots": [1],
+      "screen": "3 个卡点瞬间快切 + 「2 分钟 / 2880 帧 / 95 张字幕卡」",
+      "narration": "两分钟，两千八百八十帧，九十五张手绘字幕卡。它不是一次生成的，也不靠漂亮提示词。这支片子讲的是另一半：把模糊想法变成能逐帧验收的工程。"
+    },
+    {
+      "id": 2,
+      "in": 18.0,
+      "out": 58.0,
+      "title": "关键点 1 · 先拆音频，别先想画面",
+      "shots": [2, 3],
+      "screen": "音频波形 → 拍点网格逐格亮起 → BPM / 首拍相位 / 时长三个数",
+      "narration": "第一步不是画分镜，是拆音频。测出速度、首拍相位和时长，这三个数决定后面一切。这首曲子主脉冲九十、细分一百八，首拍落在零点四秒。有了它们，卡点就不再是感觉，而是一张能写进表格的网格：一百八十个大拍、三百六十个细分拍、四十五个小节。所有切镜、字幕、动效都锁在同一张网上，谁也不许自己另起一个周期。"
+    },
+    {
+      "id": 3,
+      "in": 58.0,
+      "out": 103.0,
+      "title": "关键点 2+3 · 规格化提示词与风格边界",
+      "shots": [4, 5],
+      "screen": "规格文档逐行高亮 → A/B/C/D 四类风格边界表 → 13 色色板",
+      "narration": "第二件事，把提示词写成规格，不是氛围。时长写一百二十点零零零秒，画幅写一九二零乘一零八零，卡点误差写正负零点零五秒，歌词锚点写成二十九条逐条时间码。凡是「适当」「自然」「好看」，一律换成数值，并且把禁止项单独列一章。第三件事是风格边界：找到原风格指南，逐条抄成可执行规则。如果必须打破其中一条，比如原规则禁止画面出现文字，而你需要卡点字幕，就把豁免写死——只允许「画面内出现手绘字幕」这一件事，其余规则一个都不放松。"
+    },
+    {
+      "id": 4,
+      "in": 103.0,
+      "out": 148.0,
+      "title": "关键点 4 · 一次性生成做不到精确卡点",
+      "shots": [6],
+      "screen": "音频+LRC+配置 → 生成数据 → 逐帧渲染 → 编码 → 验收；帧计数器递增",
+      "narration": "这里要诚实：一次性生成几秒钟的短片可以，做不到两分钟、零点三秒级卡点、二十九条精确时间码，还保持全片画风一致。所以换成逐帧渲染。音频、歌词和配制先生成为纯数据，再由同一个纯函数把帧号画成画面——同一个时间永远得到同一帧。这样才能逐帧比对、复现、定位问题。两千八百八十帧渲染完再编码，音轨原速原调，不加速、不变调、不循环。"
+    },
+    {
+      "id": 5,
+      "in": 148.0,
+      "out": 193.0,
+      "title": "关键点 5 · 字幕是画面元素，不是字幕轨",
+      "shots": [7, 8],
+      "screen": "12 种形态卡依次点亮 → 改版前后 bug 对比帧",
+      "narration": "第五点最容易被忽略。字幕不是后期叠上去的一行白字，它必须被画进同一个绘画空间，用同一套笔触、墨线、纸纹和水彩。位置、形态、大小、质感、出入场五个维度随节拍轮换。这里有个真实的 bug 最能说明问题：底衬宽度把字号倍率重复乘了一次，飘带横跨全屏，文字被裁切，还盖住主角。把字幕当成画面元素来验收，才会去检查宽度、安全边距、主角保护区和可读性。"
+    },
+    {
+      "id": 6,
+      "in": 193.0,
+      "out": 228.0,
+      "title": "关键点 6 · 验收判据先行",
+      "shots": [9],
+      "screen": "26 项判据逐条打勾，最后 4 项转成「人工」",
+      "narration": "第六点，验收判据要写在动手之前，而且尽量写成脚本能机检的形式：时长、帧数、画幅、卡点数量、纯黑纯白像素、有没有连续静止帧、字幕形态够不够多样。但也要承认哪些不能机检——艺术连贯性、线条沸腾的手感、授权是否合规，这些必须人工看、人工确认。我们只做了抽帧目视和音量相关性测量，没做全片连续试看试听，这一点也会写进交付说明里。"
+    },
+    {
+      "id": 7,
+      "in": 228.0,
+      "out": 240.0,
+      "title": "收尾 · 先定规格，再谈生成",
+      "shots": [10],
+      "screen": "回扣开场构图但状态反转：信号全灭、纸飞机飞出",
+      "narration": "换首歌，速度、相位、字幕、切镜会自动重算；画面语义仍要人指定。先定规格，再谈生成。"
+    }
+  ],
+  "shots": [
+    { "a": 0, "b": 18, "scene": "intro", "cam": "drift", "z0": 1, "z1": 1, "mood": "curious", "emote": "bulb", "elements": ["coldOpen", "noise"], "arc": { "warm": 0.08, "cool": 0.82, "bright": 0.90, "name": "cold", "texture": "dry" }, "transition": "matchCut" },
+    { "a": 18, "b": 38, "scene": "audio", "cam": "push", "z0": 1, "z1": 1.06, "mood": "curious", "emote": "bulb", "elements": ["waveform"], "arc": { "warm": 0.18, "cool": 0.56, "bright": 0.95, "name": "analysis", "texture": "dry" }, "transition": "brushWipe35" },
+    { "a": 38, "b": 58, "scene": "audio", "cam": "pull", "z0": 1.06, "z1": 1, "mood": "curious", "emote": null, "elements": ["beatGrid"], "arc": { "warm": 0.26, "cool": 0.42, "bright": 1.00, "name": "grid", "texture": "mid" }, "transition": "irisCircle" },
+    { "a": 58, "b": 80, "scene": "spec", "cam": "panR", "z0": 1, "z1": 1, "mood": "decide", "emote": "bulb", "elements": ["specSheet"], "arc": { "warm": 0.34, "cool": 0.28, "bright": 1.02, "name": "spec", "texture": "wet" }, "transition": "actionCut" },
+    { "a": 80, "b": 103, "scene": "boundary", "cam": "panL", "z0": 1, "z1": 1, "mood": "decide", "emote": null, "elements": ["boundaryTable"], "arc": { "warm": 0.40, "cool": 0.22, "bright": 1.05, "name": "boundary", "texture": "mid" }, "transition": "pageTear" },
+    { "a": 103, "b": 148, "scene": "pipeline", "cam": "follow", "z0": 1, "z1": 1.08, "mood": "happy", "emote": "spark", "elements": ["pipeline"], "arc": { "warm": 0.48, "cool": 0.14, "bright": 1.08, "name": "pipeline", "texture": "wet" }, "transition": "brushWipeH" },
+    { "a": 148, "b": 170, "scene": "subtitle", "cam": "drift", "z0": 1, "z1": 1, "mood": "happy", "emote": "spark", "elements": ["subtitleGallery"], "arc": { "warm": 0.56, "cool": 0.10, "bright": 1.10, "name": "subtitles", "texture": "bright" }, "transition": "whipPan" },
+    { "a": 170, "b": 193, "scene": "subtitle", "cam": "push", "z0": 1, "z1": 1.06, "mood": "decide", "emote": "cloud", "elements": ["bugCompare"], "arc": { "warm": 0.58, "cool": 0.12, "bright": 1.08, "name": "fix", "texture": "mid" }, "transition": "irisPlane" },
+    { "a": 193, "b": 228, "scene": "verify", "cam": "pull", "z0": 1.06, "z1": 1, "mood": "calm", "emote": "bulb", "elements": ["checklist"], "arc": { "warm": 0.62, "cool": 0.08, "bright": 1.10, "name": "verify", "texture": "bright" }, "transition": "matchCut" },
+    { "a": 228, "b": 240, "scene": "outro", "cam": "pull", "z0": 1.10, "z1": 1, "mood": "happy", "emote": "heart", "elements": ["outro", "finaleBurst"], "arc": { "warm": 0.78, "cool": 0.02, "bright": 1.14, "name": "outro", "texture": "bright" }, "transition": "softLanding" }
+  ],
+  "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+  "notes": {
+    "source": "由 handdrawn-beat-video-kit 音乐卡点动画工程拆解而来，讲解片本身不含任何第三方音频",
+    "honesty": "只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录",
+    "next": "后续口播稿按同一标准新建 episode 目录，跑 new → build → render → verify → archive"
+  }
+}

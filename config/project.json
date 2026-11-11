@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "title": "怎么用 AI 出一份优质的应用动画视频",
+  "episode": "2026-11-11-handdrawn-beat-video-kit",
+  "audio": "assets/audio/voiceover-placeholder.wav",
+  "audioFade": {
+    "tail": 0
+  },
+  "duration": 240,
+  "fps": 24,
+  "layout": "16x9",
+  "bpm": 90,
+  "offset": 0.4,
+  "bpmRange": [
+    70,
+    190
+  ],
+  "lyrics": "episodes/2026-11-11-handdrawn-beat-video-kit/anchors.lrc",
+  "keywords": [
+    "规格",
+    "卡点",
+    "字幕",
+    "验收"
+  ],
+  "shotCount": 10,
+  "shots": "auto",
+  "fontFile": "auto",
+  "fontFileCJK": "auto",
+  "out": "episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-16x9.mp4",
+  "style": {
+    "palette": "warm-handdrawn",
+    "boilHz": 12,
+    "softEnding": true,
+    "interactions": true,
+    "portraitInfographics": true,
+    "heroU": "auto",
+    "heroPlacement": {
+      "x": 250,
+      "y": 880,
+      "u": 22
+    },
+    "cardBand": {
+      "xMin": 400,
+      "xMax": 1560,
+      "y": 905,
+      "jitterY": 26
+    }
+  },
+  "generated": {
+    "spec": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/spec.json",
+    "cards": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/subtitle-cards.json",
+    "grid": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/beat-grid.json",
+    "report": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/prepare-report.json"
+  }
+}

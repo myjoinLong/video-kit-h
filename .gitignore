@@ -1,0 +1,29 @@
+# Dependencies & OS noise
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp.mp4
+*.bundle
+*.zip
+
+# Films and audio stay local (large, and may carry third-party licences).
+# The archive keeps their SHA-256 + ffprobe facts in episodes/*/manifest.json.
+out/*.mp4
+out/*.wav
+out/silent.wav
+out/*.jpg
+out/*.png
+out/stills/
+out/stills-9x16/
+episodes/*/out/*.mp4
+episodes/*/out/*.wav
+assets/audio/*.wav
+assets/audio/*.mp3
+assets/audio/*.m4a
+
+# KEEP IN GIT (deliberate):
+#   episodes/*/generated*/  (spec, cards, grid, report)
+#   episodes/*/out/*.jpg    (contact sheets, decoded frame checks)
+#   episodes/*/out/*.json   (verification reports)
+#   episodes/*/manifest.json, INDEX.md, narration-script.md / .srt / -cues.json

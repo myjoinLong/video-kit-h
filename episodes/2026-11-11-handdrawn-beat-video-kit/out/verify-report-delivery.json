@@ -1,0 +1,101 @@
+{
+  "episode": "2026-11-11-handdrawn-beat-video-kit",
+  "passed": 18,
+  "total": 18,
+  "results": [
+    {
+      "name": "16x9 成片存在",
+      "ok": true,
+      "detail": "explainer-240s-16x9.mp4"
+    },
+    {
+      "name": "16x9 时长 240.000 ±0.100 s",
+      "ok": true,
+      "detail": "240.000000 s"
+    },
+    {
+      "name": "16x9 5760 帧 / 1920×1080 / 24 fps",
+      "ok": true,
+      "detail": "5760 / 1920×1080 / 24/1"
+    },
+    {
+      "name": "16x9 音轨 AAC 44.1 kHz 立体声",
+      "ok": true,
+      "detail": "aac 44100Hz ch2"
+    },
+    {
+      "name": "16x9 音轨等长且从 0 开始",
+      "ok": true,
+      "detail": "240.000000 s / start 0.000000"
+    },
+    {
+      "name": "16x9 音轨为静音占位（可替换旁白）",
+      "ok": true,
+      "detail": "mean=-91.0 dB"
+    },
+    {
+      "name": "16x9 26 项通用验收全过",
+      "ok": true,
+      "detail": "26/26"
+    },
+    {
+      "name": "9x16 成片存在",
+      "ok": true,
+      "detail": "explainer-240s-9x16.mp4"
+    },
+    {
+      "name": "9x16 时长 240.000 ±0.100 s",
+      "ok": true,
+      "detail": "240.000000 s"
+    },
+    {
+      "name": "9x16 5760 帧 / 1080×1920 / 24 fps",
+      "ok": true,
+      "detail": "5760 / 1080×1920 / 24/1"
+    },
+    {
+      "name": "9x16 音轨 AAC 44.1 kHz 立体声",
+      "ok": true,
+      "detail": "aac 44100Hz ch2"
+    },
+    {
+      "name": "9x16 音轨等长且从 0 开始",
+      "ok": true,
+      "detail": "240.000000 s / start 0.000000"
+    },
+    {
+      "name": "9x16 音轨为静音占位（可替换旁白）",
+      "ok": true,
+      "detail": "mean=-91.0 dB"
+    },
+    {
+      "name": "9x16 26 项通用验收全过",
+      "ok": true,
+      "detail": "26/26"
+    },
+    {
+      "name": "旁白稿 / cues / SRT 三件套齐全",
+      "ok": true,
+      "detail": "7 段"
+    },
+    {
+      "name": "旁白时间码连续覆盖全片",
+      "ok": true,
+      "detail": "0 → 240"
+    },
+    {
+      "name": "每段语速在 120–300 字/分",
+      "ok": true,
+      "detail": "223 / 219 / 277 / 213 / 227 / 274 / 205"
+    },
+    {
+      "name": "稿子标注了静音轨替换方式",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "films": [
+    "D:\\日常分析\\video-kit-h\\episodes\\2026-11-11-handdrawn-beat-video-kit\\out\\explainer-240s-16x9.mp4",
+    "D:\\日常分析\\video-kit-h\\episodes\\2026-11-11-handdrawn-beat-video-kit\\out\\explainer-240s-9x16.mp4"
+  ]
+}

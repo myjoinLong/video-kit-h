@@ -1,0 +1,80 @@
+{
+  "_readme": "参考模板。实际使用请跑 `node tools/new-episode.mjs --slug ...` 生成完整骨架；本文件只展示字段含义。完整可运行示例见 episodes/2026-11-11-handdrawn-beat-video-kit/episode.json。",
+  "schema": 1,
+  "id": "YYYY-MM-DD-slug",
+  "date": "YYYY-MM-DD",
+  "title": "片名",
+  "topic": "内容类型（产品讲解 / 方法论 / 复盘 / 教程）",
+  "tags": ["标签"],
+  "status": "draft | delivered",
+  "duration": 210,
+  "fps": 24,
+  "bpm": 90,
+  "offset": 0.4,
+  "softEndingAt": 208.4,
+  "keywords": ["关键词"],
+  "closingLine": "最后一句收尾",
+  "narration": {
+    "mode": "post-record",
+    "voice": "后期补录",
+    "silentPlaceholder": true,
+    "paceWordsPerMinute": 220,
+    "note": "成片自带静音占位轨，按章节时间码对齐配音"
+  },
+  "style": {
+    "palette": "warm-handdrawn",
+    "boilHz": 12,
+    "softEnding": true,
+    "interactions": true,
+    "portraitInfographics": true,
+    "heroU": "auto"
+  },
+  "layouts": {
+    "16x9": {
+      "heroPlacement": { "x": 250, "y": 880, "u": 22 },
+      "cardBand": { "xMin": 400, "xMax": 1560, "y": 905, "jitterY": 26 },
+      "out": "episodes/<slug>/out/<slug>-16x9.mp4",
+      "generatedDir": "episodes/<slug>/generated"
+    },
+    "9x16": {
+      "heroPlacement": { "x": 514, "y": 1010, "u": 22 },
+      "cardBand": { "xMin": 110, "xMax": 970, "y": 1730, "jitterY": 22, "rows": 3, "rowGap": 76 },
+      "out": "episodes/<slug>/out/<slug>.mp4",
+      "generatedDir": "episodes/<slug>/generated-9x16",
+      "kfScale": 0.72
+    }
+  },
+  "chapters": [
+    {
+      "id": 1,
+      "in": 0,
+      "out": 30,
+      "title": "段落标题",
+      "shots": [1],
+      "screen": "观众看到什么（会写进给主播的稿子）",
+      "narration": "这一段的口播正文，中文约 220 字/分钟。"
+    }
+  ],
+  "shots": [
+    {
+      "a": 0,
+      "b": 30,
+      "scene": "intro",
+      "cam": "drift",
+      "z0": 1,
+      "z1": 1,
+      "mood": "curious",
+      "emote": null,
+      "elements": ["coldOpen"],
+      "points": ["要点一", "要点二", "要点三"],
+      "arc": { "warm": 0.08, "cool": 0.82, "bright": 0.9, "name": "cold", "texture": "dry" },
+      "transition": "matchCut"
+    }
+  ],
+  "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+  "notes": {
+    "source": "素材与参考来源",
+    "honesty": "哪些没做、哪些需人工确认",
+    "next": "下一步"
+  }
+}

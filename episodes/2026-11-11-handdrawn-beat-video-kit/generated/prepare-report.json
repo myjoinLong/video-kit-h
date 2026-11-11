@@ -1,0 +1,27 @@
+{
+  "duration": 240,
+  "fps": 24,
+  "totalFrames": 5760,
+  "bpm": 90,
+  "offset": 0.4,
+  "confidence": 1,
+  "lyricLines": 31,
+  "cards": 93,
+  "shots": 10,
+  "transitions": 11,
+  "colorArcSegments": 10,
+  "forms": 12,
+  "enters": 12,
+  "exits": 12,
+  "zones": 12,
+  "textures": [
+    "dry",
+    "wet",
+    "mid",
+    "bright"
+  ],
+  "maxOnScreen": 3,
+  "z5Uses": 1,
+  "warnings": [],
+  "problems": []
+}

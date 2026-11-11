@@ -1,0 +1,740 @@
+{
+  "fps": 24,
+  "duration": 240,
+  "bpm": 90,
+  "beat": 0.6666666666666666,
+  "sub": 0.3333333333333333,
+  "bar": 2.6666666666666665,
+  "phrase": 5.333333333333333,
+  "offset": 0.4,
+  "nBeats": 360,
+  "nSubs": 719,
+  "nBars": 90,
+  "nPhrases": 45,
+  "lyrics": [
+    {
+      "t": 2.2,
+      "text": "先看结果",
+      "n": 2,
+      "sec": "C1",
+      "kf": 1.9,
+      "chapter": 1,
+      "first": true
+    },
+    {
+      "t": 8.5,
+      "text": "2 分钟 · 2880 帧",
+      "n": 3,
+      "sec": "C1",
+      "kf": 1,
+      "chapter": 1,
+      "first": false
+    },
+    {
+      "t": 13.5,
+      "text": "95 张字幕卡",
+      "n": 3,
+      "sec": "C1",
+      "kf": 1,
+      "chapter": 1,
+      "first": false
+    },
+    {
+      "t": 20.5,
+      "text": "先拆音频，别先想画面",
+      "n": 3,
+      "sec": "C2",
+      "kf": 1.9,
+      "chapter": 2,
+      "first": true
+    },
+    {
+      "t": 27,
+      "text": "BPM / 首拍相位 / 时长",
+      "n": 3,
+      "sec": "C2",
+      "kf": 1,
+      "chapter": 2,
+      "first": false
+    },
+    {
+      "t": 34,
+      "text": "所有卡点建立在三个数上",
+      "n": 3,
+      "sec": "C2",
+      "kf": 1,
+      "chapter": 2,
+      "first": false
+    },
+    {
+      "t": 42.5,
+      "text": "把节奏变成数学",
+      "n": 3,
+      "sec": "C2",
+      "kf": 1,
+      "chapter": 2,
+      "first": false
+    },
+    {
+      "t": 49,
+      "text": "180 大拍 · 45 小节",
+      "n": 3,
+      "sec": "C2",
+      "kf": 1,
+      "chapter": 2,
+      "first": false
+    },
+    {
+      "t": 60.5,
+      "text": "把提示词写成规格",
+      "n": 3,
+      "sec": "C3",
+      "kf": 1.9,
+      "chapter": 3,
+      "first": true
+    },
+    {
+      "t": 67,
+      "text": "形容词一律换成数值",
+      "n": 3,
+      "sec": "C3",
+      "kf": 1,
+      "chapter": 3,
+      "first": false
+    },
+    {
+      "t": 74,
+      "text": "禁止项必须单列",
+      "n": 3,
+      "sec": "C3",
+      "kf": 1,
+      "chapter": 3,
+      "first": false
+    },
+    {
+      "t": 82,
+      "text": "风格基准要抓原文",
+      "n": 3,
+      "sec": "C3",
+      "kf": 1,
+      "chapter": 3,
+      "first": false
+    },
+    {
+      "t": 89,
+      "text": "豁免只允许一件事",
+      "n": 3,
+      "sec": "C3",
+      "kf": 1,
+      "chapter": 3,
+      "first": false
+    },
+    {
+      "t": 96,
+      "text": "色板 13 色 · 无纯黑白",
+      "n": 3,
+      "sec": "C3",
+      "kf": 1,
+      "chapter": 3,
+      "first": false
+    },
+    {
+      "t": 105,
+      "text": "一次性生成做不到精确卡点",
+      "n": 3,
+      "sec": "C4",
+      "kf": 1.9,
+      "chapter": 4,
+      "first": true
+    },
+    {
+      "t": 114,
+      "text": "改用逐帧纯函数渲染",
+      "n": 3,
+      "sec": "C4",
+      "kf": 1,
+      "chapter": 4,
+      "first": false
+    },
+    {
+      "t": 123,
+      "text": "同一 t 永远得到同一帧",
+      "n": 3,
+      "sec": "C4",
+      "kf": 1,
+      "chapter": 4,
+      "first": false
+    },
+    {
+      "t": 133,
+      "text": "2880 帧逐帧可比对",
+      "n": 3,
+      "sec": "C4",
+      "kf": 1,
+      "chapter": 4,
+      "first": false
+    },
+    {
+      "t": 141,
+      "text": "再编码 · 再验收",
+      "n": 3,
+      "sec": "C4",
+      "kf": 1,
+      "chapter": 4,
+      "first": false
+    },
+    {
+      "t": 150,
+      "text": "字幕是画面元素",
+      "n": 3,
+      "sec": "C5",
+      "kf": 1.9,
+      "chapter": 5,
+      "first": true
+    },
+    {
+      "t": 157,
+      "text": "五维随节拍轮换",
+      "n": 3,
+      "sec": "C5",
+      "kf": 1,
+      "chapter": 5,
+      "first": false
+    },
+    {
+      "t": 165,
+      "text": "不静态 · 不固定 · 不重复",
+      "n": 3,
+      "sec": "C5",
+      "kf": 1,
+      "chapter": 5,
+      "first": false
+    },
+    {
+      "t": 172.5,
+      "text": "改版前：字被裁切",
+      "n": 3,
+      "sec": "C5",
+      "kf": 1,
+      "chapter": 5,
+      "first": false
+    },
+    {
+      "t": 180,
+      "text": "改版后：不压主角",
+      "n": 3,
+      "sec": "C5",
+      "kf": 1,
+      "chapter": 5,
+      "first": false
+    },
+    {
+      "t": 187,
+      "text": "把字幕当成画面验收",
+      "n": 3,
+      "sec": "C5",
+      "kf": 1,
+      "chapter": 5,
+      "first": false
+    },
+    {
+      "t": 195,
+      "text": "验收判据先行",
+      "n": 3,
+      "sec": "C6",
+      "kf": 1.9,
+      "chapter": 6,
+      "first": true
+    },
+    {
+      "t": 203,
+      "text": "26 项可机检",
+      "n": 3,
+      "sec": "C6",
+      "kf": 1,
+      "chapter": 6,
+      "first": false
+    },
+    {
+      "t": 211,
+      "text": "后 4 项必须人工",
+      "n": 3,
+      "sec": "C6",
+      "kf": 1,
+      "chapter": 6,
+      "first": false
+    },
+    {
+      "t": 219,
+      "text": "没做全片试看，如实说明",
+      "n": 3,
+      "sec": "C6",
+      "kf": 1,
+      "chapter": 6,
+      "first": false
+    },
+    {
+      "t": 229.5,
+      "text": "先定规格，再谈生成",
+      "n": 3,
+      "sec": "C7",
+      "kf": 1.9,
+      "chapter": 7,
+      "first": true
+    },
+    {
+      "t": 236,
+      "text": "换歌后语义仍需人工决策",
+      "n": 3,
+      "sec": "C7",
+      "kf": 1,
+      "chapter": 7,
+      "first": false
+    }
+  ],
+  "shots": [
+    {
+      "id": 1,
+      "a": 0,
+      "b": 18,
+      "scene": "intro",
+      "cam": "drift",
+      "z0": 1,
+      "z1": 1,
+      "mood": "curious",
+      "emote": "bulb",
+      "elements": [
+        "coldOpen",
+        "noise"
+      ],
+      "arc": {
+        "warm": 0.08,
+        "cool": 0.82,
+        "bright": 0.9,
+        "name": "cold",
+        "texture": "dry"
+      },
+      "transition": "matchCut",
+      "action": "intro",
+      "gaze": 0,
+      "portraitTitle": "冷开场：先看结果",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {
+        "noise": {
+          "count": 14,
+          "alpha": 0.35,
+          "decay": true
+        }
+      }
+    },
+    {
+      "id": 2,
+      "a": 18,
+      "b": 38,
+      "scene": "audio",
+      "cam": "push",
+      "z0": 1,
+      "z1": 1.06,
+      "mood": "curious",
+      "emote": "bulb",
+      "elements": [
+        "waveform"
+      ],
+      "arc": {
+        "warm": 0.18,
+        "cool": 0.56,
+        "bright": 0.95,
+        "name": "analysis",
+        "texture": "dry"
+      },
+      "transition": "brushWipe35",
+      "action": "audio",
+      "gaze": 0,
+      "portraitTitle": "关键点 1 · 先拆音频，别先想画面",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 3,
+      "a": 38,
+      "b": 58,
+      "scene": "audio",
+      "cam": "pull",
+      "z0": 1.06,
+      "z1": 1,
+      "mood": "curious",
+      "emote": null,
+      "elements": [
+        "beatGrid"
+      ],
+      "arc": {
+        "warm": 0.26,
+        "cool": 0.42,
+        "bright": 1,
+        "name": "grid",
+        "texture": "mid"
+      },
+      "transition": "irisCircle",
+      "action": "audio",
+      "gaze": 0,
+      "portraitTitle": "关键点 1 · 先拆音频，别先想画面",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 4,
+      "a": 58,
+      "b": 80,
+      "scene": "spec",
+      "cam": "panR",
+      "z0": 1,
+      "z1": 1,
+      "mood": "decide",
+      "emote": "bulb",
+      "elements": [
+        "specSheet"
+      ],
+      "arc": {
+        "warm": 0.34,
+        "cool": 0.28,
+        "bright": 1.02,
+        "name": "spec",
+        "texture": "wet"
+      },
+      "transition": "actionCut",
+      "action": "spec",
+      "gaze": 0,
+      "portraitTitle": "关键点 2+3 · 规格化提示词与风格边界",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 5,
+      "a": 80,
+      "b": 103,
+      "scene": "boundary",
+      "cam": "panL",
+      "z0": 1,
+      "z1": 1,
+      "mood": "decide",
+      "emote": null,
+      "elements": [
+        "boundaryTable"
+      ],
+      "arc": {
+        "warm": 0.4,
+        "cool": 0.22,
+        "bright": 1.05,
+        "name": "boundary",
+        "texture": "mid"
+      },
+      "transition": "pageTear",
+      "action": "boundary",
+      "gaze": 0,
+      "portraitTitle": "关键点 2+3 · 规格化提示词与风格边界",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 6,
+      "a": 103,
+      "b": 148,
+      "scene": "pipeline",
+      "cam": "follow",
+      "z0": 1,
+      "z1": 1.08,
+      "mood": "happy",
+      "emote": "spark",
+      "elements": [
+        "pipeline"
+      ],
+      "arc": {
+        "warm": 0.48,
+        "cool": 0.14,
+        "bright": 1.08,
+        "name": "pipeline",
+        "texture": "wet"
+      },
+      "transition": "brushWipeH",
+      "action": "pipeline",
+      "gaze": 0,
+      "portraitTitle": "关键点 4 · 一次性生成做不到精确卡点",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 7,
+      "a": 148,
+      "b": 170,
+      "scene": "subtitle",
+      "cam": "drift",
+      "z0": 1,
+      "z1": 1,
+      "mood": "happy",
+      "emote": "spark",
+      "elements": [
+        "subtitleGallery"
+      ],
+      "arc": {
+        "warm": 0.56,
+        "cool": 0.1,
+        "bright": 1.1,
+        "name": "subtitles",
+        "texture": "bright"
+      },
+      "transition": "whipPan",
+      "action": "subtitle",
+      "gaze": 0,
+      "portraitTitle": "关键点 5 · 字幕是画面元素，不是字幕轨",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 8,
+      "a": 170,
+      "b": 193,
+      "scene": "subtitle",
+      "cam": "push",
+      "z0": 1,
+      "z1": 1.06,
+      "mood": "decide",
+      "emote": "cloud",
+      "elements": [
+        "bugCompare"
+      ],
+      "arc": {
+        "warm": 0.58,
+        "cool": 0.12,
+        "bright": 1.08,
+        "name": "fix",
+        "texture": "mid"
+      },
+      "transition": "irisPlane",
+      "action": "subtitle",
+      "gaze": 0,
+      "portraitTitle": "关键点 5 · 字幕是画面元素，不是字幕轨",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 9,
+      "a": 193,
+      "b": 228,
+      "scene": "verify",
+      "cam": "pull",
+      "z0": 1.06,
+      "z1": 1,
+      "mood": "calm",
+      "emote": "bulb",
+      "elements": [
+        "checklist"
+      ],
+      "arc": {
+        "warm": 0.62,
+        "cool": 0.08,
+        "bright": 1.1,
+        "name": "verify",
+        "texture": "bright"
+      },
+      "transition": "matchCut",
+      "action": "verify",
+      "gaze": 0,
+      "portraitTitle": "关键点 6 · 验收判据先行",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    },
+    {
+      "id": 10,
+      "a": 228,
+      "b": 240,
+      "scene": "outro",
+      "cam": "pull",
+      "z0": 1.1,
+      "z1": 1,
+      "mood": "happy",
+      "emote": "heart",
+      "elements": [
+        "outro",
+        "finaleBurst"
+      ],
+      "arc": {
+        "warm": 0.78,
+        "cool": 0.02,
+        "bright": 1.14,
+        "name": "outro",
+        "texture": "bright"
+      },
+      "transition": "softLanding",
+      "action": "outro",
+      "gaze": 0,
+      "portraitTitle": "收尾 · 先定规格，再谈生成",
+      "portraitSubtitle": "手绘讲解 · 逐帧可验收",
+      "points": null,
+      "propOpts": {}
+    }
+  ],
+  "transitions": [
+    {
+      "at": 0,
+      "type": "paperFade+brushWipe",
+      "dur": 0.4
+    },
+    {
+      "at": 18,
+      "type": "brushWipe35",
+      "dur": 0.4
+    },
+    {
+      "at": 38,
+      "type": "irisCircle",
+      "dur": 0.4
+    },
+    {
+      "at": 58,
+      "type": "actionCut",
+      "dur": 0.25
+    },
+    {
+      "at": 80,
+      "type": "pageTear",
+      "dur": 0.4
+    },
+    {
+      "at": 103,
+      "type": "brushWipeH",
+      "dur": 0.4
+    },
+    {
+      "at": 148,
+      "type": "whipPan",
+      "dur": 0.25
+    },
+    {
+      "at": 170,
+      "type": "irisPlane",
+      "dur": 0.4
+    },
+    {
+      "at": 193,
+      "type": "matchCut",
+      "dur": 0.25
+    },
+    {
+      "at": 228,
+      "type": "softLanding",
+      "dur": 0.4
+    },
+    {
+      "at": 238.4,
+      "type": "softLanding",
+      "dur": 1.6
+    }
+  ],
+  "colorArc": [
+    {
+      "at": 0,
+      "warm": 0.08,
+      "cool": 0.82,
+      "bright": 0.9,
+      "name": "cold",
+      "texture": "dry"
+    },
+    {
+      "at": 18,
+      "warm": 0.18,
+      "cool": 0.56,
+      "bright": 0.95,
+      "name": "analysis",
+      "texture": "dry"
+    },
+    {
+      "at": 38,
+      "warm": 0.26,
+      "cool": 0.42,
+      "bright": 1,
+      "name": "grid",
+      "texture": "mid"
+    },
+    {
+      "at": 58,
+      "warm": 0.34,
+      "cool": 0.28,
+      "bright": 1.02,
+      "name": "spec",
+      "texture": "wet"
+    },
+    {
+      "at": 80,
+      "warm": 0.4,
+      "cool": 0.22,
+      "bright": 1.05,
+      "name": "boundary",
+      "texture": "mid"
+    },
+    {
+      "at": 103,
+      "warm": 0.48,
+      "cool": 0.14,
+      "bright": 1.08,
+      "name": "pipeline",
+      "texture": "wet"
+    },
+    {
+      "at": 148,
+      "warm": 0.56,
+      "cool": 0.1,
+      "bright": 1.1,
+      "name": "subtitles",
+      "texture": "bright"
+    },
+    {
+      "at": 170,
+      "warm": 0.58,
+      "cool": 0.12,
+      "bright": 1.08,
+      "name": "fix",
+      "texture": "mid"
+    },
+    {
+      "at": 193,
+      "warm": 0.62,
+      "cool": 0.08,
+      "bright": 1.1,
+      "name": "verify",
+      "texture": "bright"
+    },
+    {
+      "at": 228,
+      "warm": 0.78,
+      "cool": 0.02,
+      "bright": 1.14,
+      "name": "outro",
+      "texture": "bright"
+    }
+  ],
+  "keywords": [
+    "规格",
+    "卡点",
+    "字幕",
+    "验收"
+  ],
+  "finalAnchor": 236,
+  "softLandingAt": 238.4,
+  "meta": {
+    "title": "怎么用 AI 出一份优质的应用动画视频",
+    "episode": "2026-11-11-handdrawn-beat-video-kit",
+    "layout": "9x16",
+    "analysis": "authored chapter grid",
+    "generator": "video-kit-h",
+    "note": "成片自带精确等长的静音 AAC 轨，按 chapters 的 in/out 对齐替换即可；画面内手绘文字已烧进画面，不需要再叠字幕。"
+  }
+}
