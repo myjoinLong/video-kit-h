@@ -12,7 +12,7 @@
     "工作流"
   ],
   "status": "delivered",
-  "archivedAt": "2026-11-11T10:40:42.874Z",
+  "archivedAt": "2026-11-11T10:42:15.370Z",
   "duration": 240,
   "fps": 24,
   "bpm": 90,
@@ -140,5 +140,5 @@
     "honesty": "只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录",
     "next": "后续口播稿按同一标准新建 episode 目录，跑 new → build → render → verify → archive"
   },
-  "gitCommit": null
+  "gitCommit": "db6d95ca512c3d87521595798197476cbf638866"
 }
