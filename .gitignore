@@ -6,12 +6,16 @@ Thumbs.db
 *.tmp.mp4
 *.bundle
 *.zip
+__pycache__/
+*.pyc
 
 # Films and audio stay local (large, and may carry third-party licences).
 # The archive keeps their SHA-256 + ffprobe facts in episodes/*/manifest.json.
 out/*.mp4
+out/*.mp3
 out/*.wav
 out/silent.wav
+out/*selftest.json
 out/*.jpg
 out/*.png
 out/stills/
