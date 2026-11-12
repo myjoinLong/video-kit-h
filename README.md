@@ -53,6 +53,19 @@ node src/main.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project-
 
 ---
 
+## 封面与发布（可选）
+
+`tools/make-cover.mjs` 用本片自己的手绘内核重渲一帧（关掉片内字幕），叠手绘标题带、数字钩子与集数印章，一次输出 **1080×1920** 与 **1080×1440（3:4 主页裁切）** 两张 PNG：
+
+```bash
+node tools/make-cover.mjs --engine ./src/render.mjs --kind explainer \
+  --config episodes/<slug>/project-9x16.json --time 5 --out out/cover.png
+```
+
+`--kind music` 用片中帧底图，`--kind explainer` 用封面专用构图（整页信息图不适合直接当封面）。所有文字限制在 `x≤856 / y 252–840`，避开抖音右侧点赞栏与底部文案区。发布文案规范与安全区细节见 `docs/09-封面与发布.md`。
+
+---
+
 ## 每期归档结构（留痕标准）
 
 ```
@@ -100,7 +113,7 @@ src/timeline/    读 generated/spec.json 的纯数据时间轴 + 道具调度
 src/subtitles.mjs  12 形态 / 12 位置 / 12 出入场 / 4 质感
 src/render.mjs   唯一逐帧入口，纯函数 (frame, config) -> 画面
 tools/           编译、渲染 CLI、验收、归档、自检 + 两个 Python 音频工具
-docs/            标准流程 / 稿子规范 / 配置 / 归档 / 风格 / 版权 / FAQ / 音频与配音
+docs/            标准流程 / 稿子规范 / 配置 / 归档 / 风格 / 版权 / FAQ / 音频与配音 / 封面与发布
 episodes/        每期一个目录，永久留痕
 ```
 
