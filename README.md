@@ -12,9 +12,11 @@
 
 `episodes/2026-11-11-handdrawn-beat-video-kit/` — 《怎么用 AI 出一份优质的应用动画视频》，240 秒，16:9 与 9:16 两版，7 段旁白 / 10 镜 / 93 张手绘字幕卡。
 
-- `narration-script.md` — **给人录的讲解稿**（含时间码、画面提示、语速）
+- `narration-script.md` — **给人录的讲解稿**（7 段逐字正文 + 时间码 + 画面提示 + 语速）
 - `narration-cues.json` / `narration.srt` — 剪辑软件对轨用
-- `out/explainer-240s-16x9.mp4` / `out/explainer-240s-9x16.mp4` — 两支成片（自带 240.000 秒静音 AAC 轨，等后期补录旁白）
+- `voice/reference-vo.mp3` — **AI 示范朗读**，240 秒逐章贴合时间窗，录之前听语速与停顿用；`voice/segments/01..07.mp3` 是逐段文件、`voice/click-track.mp3` 是 90 BPM 录制导引
+- `out/*-reference-vo.mp4` — 把示范朗读换进画面的试看版（视频流 copy，原成片不动）
+- `out/explainer-240s-16x9.mp4` / `out/explainer-240s-9x16.mp4` — 两支交付成片（自带 240.000 秒静音 AAC 轨，等后期补录旁白）
 - `manifest.json` + `INDEX.md` — 留痕总表
 
 ---
@@ -42,9 +44,12 @@ node src/main.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project-
 | 3 编译 | `node tools/build-episode.mjs --episode episodes/<slug>` | 两版 spec / cards / grid、旁白稿、cue、SRT、两份 project.json |
 | 4 渲染 | `node src/main.mjs --config episodes/<slug>/project.json --render` 与 `project-9x16.json` | 两版 MP4 |
 | 5 验收 | `node tools/verify.mjs --config ... --file ... --report .../verify-report-16x9.json`（两版）<br>`node tools/verify-delivery.mjs --episode ...` | 26 项通用 + 交付专项 |
-| 6 归档 | `node tools/archive-episode.mjs --episode episodes/<slug>` | 联系表、`manifest.json`、刷新 `INDEX.md` |
+| 6 音频 | `python tools/build-voiceover.py --episode ...`（出参考音 + 点击轨）<br>录完 `python tools/check-recording.py --episode ... --take <录音> --mux` | 参考音、分段音频、试看版、`*-voiced.mp4` |
+| 7 归档 | `node tools/archive-episode.mjs --episode episodes/<slug>` | 联系表、`manifest.json`、刷新 `INDEX.md` |
 
-`npm run episode:new / :build / :render / :verify / :delivery / :archive -- --episode ...` 是同样命令的简写。
+`npm run episode:new / :build / :render / :verify / :delivery / :archive -- --episode ...` 是同样命令的简写；音频用 `npm run voice:reference -- --episode ...` / `npm run voice:check -- --episode ... --take ...`。
+
+> 音频支线是可选的：不装 Python 依赖、不联网，也能按原流程出无声成片。`python -m pip install edge-tts numpy soundfile` 一次即可启用，详见 `docs/08-音频与配音.md`。
 
 ---
 
@@ -61,7 +66,8 @@ episodes/<slug>/
 ├── project-9x16.json       9:16 渲染配置
 ├── generated/              16:9 规格 / 字幕卡 / 节拍网格 / 自检报告
 ├── generated-9x16/         9:16 同上一套（字号与字幕带格位另算）
-├── out/                    两版成片、联系表、验收报告（大文件不进 Git）
+├── voice/                  AI 参考音 / 逐段音频 / 点击轨 / 语音报告（wav、mp3 不进 Git，json 入库）
+├── out/                    两版成片、试看版、联系表、验收报告（大文件不进 Git）
 ├── manifest.json           留痕：SHA-256、ffprobe 事实、验收结果、复现命令、未完成项
 └── README.md               本期概览
 ```
@@ -75,8 +81,9 @@ episodes/<slug>/
 - **能自动**：时长、BPM 网格、章节时间码、字幕卡拆分、切镜、转场、色彩弧、16:9 与 9:16 两套排版、验收与归档。
 - **需要人决定**：每一镜讲什么、用哪张信息图、画面内写哪些要点、旁白正文、以及"画面与新稿子的语义对应"。`shots[].elements` 是可组合的通用信息图组件，不是按稿子自动长出来的插画。
 - **9:16 是重新取景 + 竖版重排**，不是裁切或拉伸；竖屏信息图在 `src/props/portrait.mjs`，与横屏共用同一套笔触、色板和 12 次/秒沸腾线条。
-- **不含 TTS**。成片自带精确等长静音轨，旁白由人后期补录后按时间码替换；画面内文字已烧进画面，不需要再叠字幕。
-- 本仓库**不含任何第三方音频**；若你换成自己的音乐或配音，授权自行确认。
+- **配音由人录**。成片自带精确等长静音轨，按时间码替换即可；画面内文字已烧进画面，不需要再叠字幕。
+- **有可选的 AI 参考音，但没有声音克隆**：`build-voiceover.py` 用在线 TTS 出一条示范朗读，只是录制前的节奏标尺，不是成片配音；把一小段人声扩写成整段同音色旁白需要本地部署克隆模型，本项目不含。样音仍可用于测语速、重算稿件字数与对轨，见 `docs/08-音频与配音.md`。
+- 本仓库**不含任何第三方音频**；参考音由在线服务临时合成、不入库；若你换成自己的音乐或配音，授权自行确认。
 - 验收是机检 + 抽帧目视，**不等于全片连续试看试听**；这一点会写进每期 manifest 的 `notes.honesty`。
 
 ---
@@ -92,8 +99,8 @@ src/fx/          11 类转场、主角交互层
 src/timeline/    读 generated/spec.json 的纯数据时间轴 + 道具调度
 src/subtitles.mjs  12 形态 / 12 位置 / 12 出入场 / 4 质感
 src/render.mjs   唯一逐帧入口，纯函数 (frame, config) -> 画面
-tools/           编译、渲染 CLI、验收、归档、自检
-docs/            标准流程 / 稿子规范 / 配置 / 归档 / 风格 / 版权 / FAQ
+tools/           编译、渲染 CLI、验收、归档、自检 + 两个 Python 音频工具
+docs/            标准流程 / 稿子规范 / 配置 / 归档 / 风格 / 版权 / FAQ / 音频与配音
 episodes/        每期一个目录，永久留痕
 ```
 

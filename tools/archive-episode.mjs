@@ -81,6 +81,42 @@ const genFiles = ['spec.json', 'subtitle-cards.json', 'beat-grid.json', 'prepare
   .filter((p) => fs.existsSync(p))
   .map((p) => ({ file: REL(p), sha256: sha(p) }));
 const cues = JSON.parse(fs.readFileSync(path.join(EP, 'narration-cues.json'), 'utf8')).chapters;
+
+// ---- audio assets: reference VO, per-chapter audio, click track -------------
+const VDIR = path.join(EP, 'voice');
+const audioFiles = [];
+const AUDIO_EXT = /\.(wav|mp3|m4a|flac)$/i;
+if (fs.existsSync(VDIR)) {
+  for (const n of fs.readdirSync(VDIR).sort()) {
+    const p = path.join(VDIR, n);
+    if (fs.statSync(p).isDirectory()) {
+      for (const m of fs.readdirSync(p).sort()) {
+        const q = path.join(p, m);
+        if (AUDIO_EXT.test(m) && fs.statSync(q).isFile())
+          audioFiles.push({ file: REL(q), sizeBytes: fs.statSync(q).size, sha256: sha(q) });
+      }
+    } else if (AUDIO_EXT.test(n)) {
+      audioFiles.push({ file: REL(p), sizeBytes: fs.statSync(p).size, sha256: sha(p) });
+    }
+  }
+}
+const voReport = path.join(VDIR, 'voiceover-report.json');
+const vo = fs.existsSync(voReport) ? JSON.parse(fs.readFileSync(voReport, 'utf8')) : null;
+const recReport = path.join(VDIR, 'recording-report.json');
+const audioRecord = {
+  mode: ep.narration?.mode || 'post-record',
+  referenceVoice: vo ? {
+    engine: vo.engine, rateMode: vo.rateMode, durationSec: vo.duration,
+    samples: vo.samples, totalChars: vo.totalChars,
+    reference: 'voice/reference-vo.wav', listen: 'voice/reference-vo.mp3',
+    clickTrack: 'voice/click-track.mp3', report: REL(voReport),
+    referenceFilms: (vo.outputs || []).filter((x) => x.endsWith('.mp4')),
+  } : null,
+  recordingCheck: fs.existsSync(recReport) ? REL(recReport) : null,
+  files: audioFiles,
+  note: '参考音是在线 TTS 合成的节奏标尺，不是成片配音；wav/mp3 不入库，哈希在此留痕。声音克隆不在本项目能力内，见 docs/08-音频与配音.md。',
+};
+
 let gitCommit = null;
 try { gitCommit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).trim(); } catch { /* no git repo yet */ }
 
@@ -97,6 +133,7 @@ const manifest = {
     files: ['narration-script.md', 'narration-cues.json', 'narration.srt'].map((n) => REL(path.join(EP, n))),
   },
   layouts: layoutRecords,
+  audio: audioRecord,
   generatedFiles: genFiles,
   commands: [
     `node tools/build-episode.mjs --episode ${REL(EP)}`,
@@ -105,6 +142,8 @@ const manifest = {
     `node tools/verify.mjs --config ${REL(EP)}/project.json --file ${REL(resolve(p16.out))} --report ${REL(EP)}/out/verify-report-16x9.json`,
     `node tools/verify.mjs --config ${REL(EP)}/project-9x16.json --file ${REL(films[1].file)} --report ${REL(EP)}/out/verify-report-9x16.json`,
     `node tools/verify-delivery.mjs --episode ${REL(EP)}`,
+    `python tools/build-voiceover.py --episode ${REL(EP)}`,
+    `python tools/check-recording.py --episode ${REL(EP)} --take <your-voice.wav> --mux`,
     `node tools/archive-episode.mjs --episode ${REL(EP)}`,
   ],
   notes: ep.notes || {},

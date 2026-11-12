@@ -13,6 +13,8 @@
     "episode:verify": "node tools/verify.mjs",
     "episode:delivery": "node tools/verify-delivery.mjs",
     "episode:archive": "node tools/archive-episode.mjs",
+    "voice:reference": "python tools/build-voiceover.py",
+    "voice:check": "python tools/check-recording.py",
     "render": "node src/main.mjs --render",
     "verify": "node tools/verify.mjs"
   },

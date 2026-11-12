@@ -2,7 +2,7 @@
 
 > 每支片子都走同一条流水线。中途不手写渲染代码，不改内核；只改数据。
 
-## 六步
+## 七步
 
 ### 1. 建期次
 
@@ -66,7 +66,32 @@ node tools/verify-delivery.mjs --episode episodes/<slug>
 通用 26 项 + 交付专项（两版成片、静音轨、稿子三件套、语速、验收报告）。
 未通过先修数据或排版，**不要带着 ❌ 归档**。
 
-### 6. 归档留痕
+### 6. 音频（参考音 → 录人声 → 替换音轨）
+
+```bash
+python -m pip install edge-tts numpy soundfile        # 一次性
+python tools/build-voiceover.py --episode episodes/<slug>
+```
+
+产出 `voice/reference-vo.mp3`（逐章贴合时间窗的示范朗读）、`voice/segments/01..NN.mp3`、
+`voice/click-track.mp3`（90 BPM 导引，不进成片）与 `out/*-reference-vo.mp4` 试看版。
+**这一步只帮你听节奏，不是成片配音**；也完全可以跳过，直接录人声。
+
+拿着 `narration-script.md` 逐字录，然后：
+
+```bash
+python tools/check-recording.py --episode episodes/<slug> --take ~/my-voice.wav          # 先检查
+python tools/check-recording.py --episode episodes/<slug> --take ~/my-voice.wav --mux   # 再出片
+```
+
+工具会报时长差、峰值、削波、逐章有声占比，并补齐到 `duration` 精确长度、−16 LUFS 标准化、
+替换音轨生成 `*-voiced.mp4`（视频流 copy）。只给了**一小段样音**时加 `--sample --chars <字数>`，
+它给出你的真实语速与逐章建议字数——据此回去改 `episode.json` 再编译，时间码就贴合你的说话习惯。
+
+> 声音克隆不在本项目能力内：把样音扩写成整段同音色旁白，需要本地部署 GPT-SoVITS / CosyVoice / fish-speech
+> 一类模型及权重。详见 `docs/08-音频与配音.md`。
+
+### 7. 归档留痕
 
 ```bash
 node tools/archive-episode.mjs --episode episodes/<slug>
@@ -77,7 +102,9 @@ node tools/archive-episode.mjs --episode episodes/<slug>
 ## 交付清单（每期）
 
 - [ ] 两版 MP4（本地 `out/`，不入库）
-- [ ] `narration-script.md` 给主播，`narration.srt` 给剪辑
+- [ ] `narration-script.md` 给主播（**含逐字正文**），`narration.srt` 给剪辑
+- [ ] `voice/reference-vo.mp3` + `voice/click-track.mp3`（如走了音频支线）
+- [ ] 若已录人声：`*-voiced.mp4` + `voice/recording-report.json`
 - [ ] 两版联系表 + 两份验收报告
 - [ ] `manifest.json` + `INDEX.md` 已更新
 - [ ] `episode.json` 的 `notes.honesty` 写了未完成项

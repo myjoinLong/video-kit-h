@@ -11,11 +11,12 @@
 |---|---|
 | `episode.json` | 稿子 + 分镜 + 参数的唯一源 |
 | `anchors.lrc` | 画面内手绘文字的时间码 |
-| `narration-script.md` | 给人录的旁白稿（含时间码与画面提示） |
+| `narration-script.md` | 给人录的旁白稿（**逐字正文** + 时间码 + 画面提示 + 语速） |
 | `narration-cues.json` / `narration.srt` | 剪辑软件对轨用 |
+| `voice/` | AI 参考音、逐段朗读、点击轨、语音报告（wav/mp3 不入库） |
 | `project.json` / `project-9x16.json` | 两版渲染配置 |
 | `generated/` `generated-9x16/` | 规格、字幕卡、网格、自检报告 |
-| `out/` | 两版成片、联系表、验收报告（大文件不入库） |
+| `out/` | 两版成片、试看版、联系表、验收报告（大文件不入库） |
 | `manifest.json` | 留痕：哈希、参数、验收、未完成项 |
 
 ## 复现
@@ -26,10 +27,12 @@ node src/main.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project.
 node src/main.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project-9x16.json --render
 node tools/verify.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project.json --file episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-16x9.mp4
 node tools/verify.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project-9x16.json --file episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-9x16.mp4
+python tools/build-voiceover.py --episode episodes/2026-11-11-handdrawn-beat-video-kit
+python tools/check-recording.py --episode episodes/2026-11-11-handdrawn-beat-video-kit --take <你的录音> --mux
 node tools/archive-episode.mjs --episode episodes/2026-11-11-handdrawn-beat-video-kit
 ```
 
 ## 如实说明
 
-- 只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录
+- 只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录；voice/reference-vo.* 是在线 TTS 合成的节奏标尺，不是成片配音，也不构成声音克隆；参考音与试看版仅做电平/时长机检，未做全片连续试听
 - 由 handdrawn-beat-video-kit 音乐卡点动画工程拆解而来，讲解片本身不含任何第三方音频

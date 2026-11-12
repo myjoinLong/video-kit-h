@@ -122,7 +122,7 @@
   "portraitSubtitle": "手绘讲解 · 逐帧可验收",
   "notes": {
     "source": "由 handdrawn-beat-video-kit 音乐卡点动画工程拆解而来，讲解片本身不含任何第三方音频",
-    "honesty": "只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录",
-    "next": "后续口播稿按同一标准新建 episode 目录，跑 new → build → render → verify → archive"
+  "honesty": "只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录；voice/reference-vo.* 是在线 TTS 合成的节奏标尺，不是成片配音，也不构成声音克隆；参考音与试看版仅做电平/时长机检，未做全片连续试听",
+  "next": "后续口播稿按同一标准新建 episode 目录，跑 new → build → render → verify → voice → archive；若用户给人声样音，先用 check-recording.py --sample 校准语速与逐章字数"
   }
 }

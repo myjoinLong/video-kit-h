@@ -200,7 +200,7 @@ const srtTime = (s) => {
 const cues = chapters.map((c) => ({
   id: c.id, in: c.in, out: c.out, duration: +(c.out - c.in).toFixed(3),
   title: c.title, shots: c.shots, screen: c.screen,
-  chars: [...c.narration].length, text: c.narration,
+  chars: [...c.narration].length, text: c.narration, narration: c.narration,
 }));
 const srt = cues.map((c, i) => `${i + 1}\n${srtTime(c.in)} --> ${srtTime(c.out)}\n${c.text}\n`).join('\n');
 const script = [
@@ -222,7 +222,11 @@ const script = [
     '',
     `画面：${c.screen}`,
     '',
-    c.narration,
+    '**照念正文**',
+    '',
+    c.text,
+    '',
+    `> 本段 ${c.chars} 字 / ${c.duration} 秒（约 ${pace[c.id - 1].wpm} 字每分）。示范朗读见 \`voice/segments/${String(c.id).padStart(2, '0')}.mp3\`。`,
     '',
   ]),
   '---',
@@ -231,8 +235,10 @@ const script = [
   '',
   `- 全片 ${BPM} BPM，大拍 ${BEAT.toFixed(3)} 秒；画面切换落在 ${shots.map((s) => s.a).join('、')} 秒。`,
   `- ${SOFT_AT.toFixed(3)} 秒起画面进入 ${(DURATION - SOFT_AT).toFixed(3)} 秒的减速收束，最后一句建议在此前收尾，留一点余韵。`,
-  '- 若需要节拍导引，可另生成一条点击轨（不进成片），录完删掉即可。',
+  '- 若需要节拍导引，可另生成一条点击轨（不进成片），录完删掉即可：`voice/click-track.mp3`。',
+  '- **示范参考音**：`voice/reference-vo.mp3` 是 AI 合成的完整 240 秒朗读，`voice/segments/` 是逐段文件；只用于听语速与停顿，不是成片配音。',
   '- 成片音轨是静音占位，不含任何第三方音频；本片画面文字为中文手绘，不需另加字幕轨。',
+  '- 录完用 `python tools/check-recording.py --episode <期次目录> --take <录音文件>` 做时长 / 峰值 / 静音检查，加 `--mux` 可直接替换音轨出片。',
   '',
 ].join('\n');
 
@@ -313,11 +319,12 @@ w(path.join(EP, 'README.md'), [
   '|---|---|',
   '| `episode.json` | 稿子 + 分镜 + 参数的唯一源 |',
   '| `anchors.lrc` | 画面内手绘文字的时间码 |',
-  '| `narration-script.md` | 给人录的旁白稿（含时间码与画面提示） |',
+  '| `narration-script.md` | 给人录的旁白稿（**逐字正文** + 时间码 + 画面提示 + 语速） |',
   '| `narration-cues.json` / `narration.srt` | 剪辑软件对轨用 |',
+  '| `voice/` | AI 参考音、逐段朗读、点击轨、语音报告（wav/mp3 不入库） |',
   '| `project.json` / `project-9x16.json` | 两版渲染配置 |',
   '| `generated/` `generated-9x16/` | 规格、字幕卡、网格、自检报告 |',
-  '| `out/` | 两版成片、联系表、验收报告（大文件不入库） |',
+  '| `out/` | 两版成片、试看版、联系表、验收报告（大文件不入库） |',
   '| `manifest.json` | 留痕：哈希、参数、验收、未完成项 |',
   '',
   '## 复现',
@@ -328,6 +335,8 @@ w(path.join(EP, 'README.md'), [
   `node src/main.mjs --config ${REL(EP)}/project-9x16.json --render`,
   `node tools/verify.mjs --config ${REL(EP)}/project.json --file ${REL(EP)}/out/explainer-240s-16x9.mp4`,
   `node tools/verify.mjs --config ${REL(EP)}/project-9x16.json --file ${REL(EP)}/out/explainer-240s-9x16.mp4`,
+  `python tools/build-voiceover.py --episode ${REL(EP)}`,
+  `python tools/check-recording.py --episode ${REL(EP)} --take <你的录音> --mux`,
   `node tools/archive-episode.mjs --episode ${REL(EP)}`,
   '```',
   '',

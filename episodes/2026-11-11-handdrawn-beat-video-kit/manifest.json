@@ -12,7 +12,7 @@
     "工作流"
   ],
   "status": "delivered",
-  "archivedAt": "2026-11-11T10:42:15.370Z",
+  "archivedAt": "2026-11-12T01:55:01.419Z",
   "duration": 240,
   "fps": 24,
   "bpm": 90,
@@ -92,6 +92,83 @@
       "generatedDir": "episodes/2026-11-11-handdrawn-beat-video-kit/generated-9x16"
     }
   ],
+  "audio": {
+    "mode": "post-record",
+    "referenceVoice": {
+      "engine": "edge-tts zh-CN-XiaoxiaoNeural",
+      "rateMode": "per-chapter auto",
+      "durationSec": 240,
+      "samples": 10584000,
+      "totalChars": 952,
+      "reference": "voice/reference-vo.wav",
+      "listen": "voice/reference-vo.mp3",
+      "clickTrack": "voice/click-track.mp3",
+      "report": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/voiceover-report.json",
+      "referenceFilms": [
+        "explainer-240s-16x9-reference-vo.mp4",
+        "explainer-240s-9x16-reference-vo.mp4"
+      ]
+    },
+    "recordingCheck": null,
+    "files": [
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/click-track.mp3",
+        "sizeBytes": 5761610,
+        "sha256": "d9b3b0034d0a88e5f91301fd88ccced6b722c00f539eca85c0f6af32daf6e9f5"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/click-track.wav",
+        "sizeBytes": 42336044,
+        "sha256": "8668db604ebeca3074466b32b77187393e3b4168977e89b0510b6325acbafdb8"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/reference-vo.mp3",
+        "sizeBytes": 9602655,
+        "sha256": "9633c3b7b3b92612fb93fe7142e1994aeea1d54073c154c9b97f1911d0f54d2f"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/reference-vo.wav",
+        "sizeBytes": 42336044,
+        "sha256": "dbbdb505ef8ec183a9291be47936dc8a5f9047062b579b4fcbc2dd4b231ed475"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/segments/01.mp3",
+        "sizeBytes": 100800,
+        "sha256": "09d5689e040efcec50eecfe61c0e4fd9f960e61d00211abe9e0dd67f81fa3e8a"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/segments/02.mp3",
+        "sizeBytes": 228240,
+        "sha256": "6229cd356600acb99edd6524528092c57708123cb0fa3c8e19c2f1e37138c2de"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/segments/03.mp3",
+        "sizeBytes": 249120,
+        "sha256": "06a460b353d50c7f1b6e07e9c3643a8c152069758a9029e0ac34e0b06420a07a"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/segments/04.mp3",
+        "sizeBytes": 263088,
+        "sha256": "bd6fdc5a5e484cf44c3b25758a0ff58a05c0fc91f16bf08ed413c750263d7485"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/segments/05.mp3",
+        "sizeBytes": 259776,
+        "sha256": "3ae1a9634744296318a65dc6cfcbdf06b8163866884747c9034566c3d1733a2c"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/segments/06.mp3",
+        "sizeBytes": 198720,
+        "sha256": "14a9c69921b52251243b6e59810b84e47a3b4e4635e6690d959da106e90ff245"
+      },
+      {
+        "file": "episodes/2026-11-11-handdrawn-beat-video-kit/voice/segments/07.mp3",
+        "sizeBytes": 74592,
+        "sha256": "bb033d5d7ab43f62ca8d1f768ac13445a1ca320d1b5ccedf7a6fc5f003413cd6"
+      }
+    ],
+    "note": "参考音是在线 TTS 合成的节奏标尺，不是成片配音；wav/mp3 不入库，哈希在此留痕。声音克隆不在本项目能力内，见 docs/08-音频与配音.md。"
+  },
   "generatedFiles": [
     {
       "file": "episodes/2026-11-11-handdrawn-beat-video-kit/generated/spec.json",
@@ -133,12 +210,14 @@
     "node tools/verify.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project.json --file episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-16x9.mp4 --report episodes/2026-11-11-handdrawn-beat-video-kit/out/verify-report-16x9.json",
     "node tools/verify.mjs --config episodes/2026-11-11-handdrawn-beat-video-kit/project-9x16.json --file episodes/2026-11-11-handdrawn-beat-video-kit/out/explainer-240s-9x16.mp4 --report episodes/2026-11-11-handdrawn-beat-video-kit/out/verify-report-9x16.json",
     "node tools/verify-delivery.mjs --episode episodes/2026-11-11-handdrawn-beat-video-kit",
+    "python tools/build-voiceover.py --episode episodes/2026-11-11-handdrawn-beat-video-kit",
+    "python tools/check-recording.py --episode episodes/2026-11-11-handdrawn-beat-video-kit --take <your-voice.wav> --mux",
     "node tools/archive-episode.mjs --episode episodes/2026-11-11-handdrawn-beat-video-kit"
   ],
   "notes": {
     "source": "由 handdrawn-beat-video-kit 音乐卡点动画工程拆解而来，讲解片本身不含任何第三方音频",
-    "honesty": "只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录",
-    "next": "后续口播稿按同一标准新建 episode 目录，跑 new → build → render → verify → archive"
+    "honesty": "只做了抽帧目视与机检，未做全片连续试看试听；旁白由用户后期补录；voice/reference-vo.* 是在线 TTS 合成的节奏标尺，不是成片配音，也不构成声音克隆；参考音与试看版仅做电平/时长机检，未做全片连续试听",
+    "next": "后续口播稿按同一标准新建 episode 目录，跑 new → build → render → verify → voice → archive；若用户给人声样音，先用 check-recording.py --sample 校准语速与逐章字数"
   },
-  "gitCommit": "db6d95ca512c3d87521595798197476cbf638866"
+  "gitCommit": "0f5551ab64a400651966ad10aeba47c5d7590610"
 }

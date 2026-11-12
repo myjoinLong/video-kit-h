@@ -18,6 +18,9 @@ out/stills/
 out/stills-9x16/
 episodes/*/out/*.mp4
 episodes/*/out/*.wav
+episodes/*/voice/*.wav
+episodes/*/voice/*.mp3
+episodes/*/voice/segments/*.mp3
 assets/audio/*.wav
 assets/audio/*.mp3
 assets/audio/*.m4a
